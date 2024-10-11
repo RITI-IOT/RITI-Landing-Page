@@ -39,11 +39,6 @@ header{
     align-items: center;
     position: relative;
     height: 20vw;
-    h1{
-        width: 25vw;
-        text-align: center;
-        font-size: clamp(1.5rem, 3vw, 2rem);
-    }
 }
 header::before{
     content: '';
@@ -415,97 +410,129 @@ footer{
 }
 iframe{
     border-radius: 1rem;
+    width: clamp(30rem, 50vw, 45rem);
+    height: clamp(23rem, 38vw, 35rem);
 }
 @media screen and (max-width: 600px) {
-    .top-left{
-        svg{
-            width: 18vw;
-        }
+    html,body{
+        width: 100%;
     }
     p{
-        font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+        font-size: clamp(0.9rem, 4vw, 0.9rem);
+        font-weight: 500;
+        color: var(--text-color);
     }
     header{
+        width: 100%;
+        height: fit-content;
+    }
+    header::before{
+        background-color: transparent;
+    }
+    .top-top{
         display: flex;
         align-items: center;
-        padding:  1vw 4vw;
-        .logo-detail{
-            gap: 1vw;
-            img{
-                width: 20vw;
-            }
+        padding:  3vw 5vw;
+        justify-content: space-between;
+        width: 100%;
+        #logo{
+            width: 20vw;
+        }
+    }
+    .top-top-right{
+        display: none;
+    }
+    .introduction{
+        align-items: center;
+        padding: 10vw 6vw;
+        position: relative;
+        h1{
+            margin: 5vw 0;
+        }
+        p{
+            margin: 0 0 5vw;
         }
     }
     main{
-        width: 100%;
-        > section{
-            padding: 8vw 0 6vw 15vw;
-            >section {
-                gap: 6vw;
-                img{
-                    height: 60vw;
-                    border-radius: 1vw;
-                    margin: 0 0 4vw;
-                }
-                >div{
-                    flex: 0 0 70vw;
-                    width: 70vw;
-                    padding: 0 0 4vw;
-                }
+        > section:not(.introduction, .fourth){
+            padding: 10vw 6vw;
+            gap: 4vw;
+            grid-template-columns: 100%;
+            > article{
+                gap: 3vw;
+            }
+            img{
+                height: 100%;
+                width: 100%;
             }
         }
-        > section:nth-child(odd){
-            padding: 12vw 0 16vw 15vw;
+        .second{
+            img{
+                grid-row: 1;
+            }
+        }
+        > section:nth-child(even):not(.introduction){
+            padding: 20vw 6vw 20vw;
         }
     }
-    .name-div{
-        gap: 1vw;
-        margin: 0 0 2vw;
+    .detail:visited{
+        color: green;
     }
-    .plus, .minus{
-        width: 3vw;
-        height: 3vw;
-        padding: 0.75vw;
+    #cross{
+        top: 0;
+        right: 0;
+    }
+    .coverage{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: 10vw;
+        background-position: left 7%;
+        img{
+            width: 50vw;
+            border-radius: 0.4vw;
+        }
+    }
+    #bhutaneseLogo{
+        height: 7.5vw;
+        width: 48vw;
+    }
+    #bbsLogo{
+        height: 9vw;
+        width: 15vw;
+    }
+    #kuenselLogo{
+        height: 9vw;
+        width: 52.5vw;
+    }
+    .lower-coverage{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 8vw;
+        > div{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .fourth{
+        gap: 8vw;
+        padding: 2vw 6vw;
+        text-align: center;
+    }
+    .bhutaneseq{
+        width: 100%;
     }
     footer{
-        >p{
-            margin: 0 0 2vw;
-        }
-        .name-div{
-            margin: 0;
-        }
-        h3{
-            margin: 0 0 3vw;
-        }
+        padding: 2vw 0 0;
     }
-    .bottom-lower{
-        flex-direction: column;
-        align-items: start;
-        justify-content: space-between;
-        gap: 10vw;
-        padding-left: 0;
-    }
-    .bottom-lower p{
-        margin-left: clamp(1rem, 6vw, 2rem);
-        img{
-            left: clamp(-2rem, -6vw, -1rem);
-        }
-    }
-    .bottom-left{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 1vw;
-    }
-    .bottom-right{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        h4{
-            font-size: clamp(1.3rem, 2.2vw, 1.8rem);
-            flex-direction: row;
-            align-items: center;
-            gap: 1vw;
+    .main-site{
+        p{
+            margin: 5vw 0 0;
+            font-size: 0.7rem;
         }
     }
 }
