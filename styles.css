@@ -439,7 +439,7 @@ iframe{
 
 .faq{
     border-bottom: 1px solid rgb(234, 234, 234);
-    padding: 0 2vw 0;
+    padding: 2vw 2vw 0;
     overflow: hidden;
     width: 100%;
 }
